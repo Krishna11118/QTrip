@@ -1,0 +1,20 @@
+[
+    {
+        "id": "2447910730",
+        "name": "Niaboytown",
+        "costPerHead": 4003,
+        "currency": "INR",
+        "image": "https://images.pexels.com/photos/837745/pexels-photo-837745.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "duration": 6,
+        "category": "Party"
+    },
+    {
+        "id": "1773524915",
+        "name": "Fort Sionnnn",
+        "costPerHead": 2686,
+        "currency": "INR",
+        "image": "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "duration": 9,
+        "category": "Cycling"
+    }
+]

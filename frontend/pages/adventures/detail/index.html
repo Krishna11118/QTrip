@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QTrip adventures</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3">
+        <a class="navbar-brand" href="../../../">QTrip</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex justify-content-end w-100">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../../">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../reservations/">Reservations</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="alert alert-success" id="reserved-banner">
+                Greetings! Reservation for this adventure is successful. (Click
+                <a href="../reservations/"><strong>here</strong></a>
+                to view your reservations)
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="adventure-detail-card mb-3">
+                        <div>
+                            <h1 id="adventure-name"></h1>
+                            <p style="font-size: 20px; color: #999" id="adventure-subtitle"></p>
+                        </div>
+                        <div class="row mb-3" id="photo-gallery"></div>
+
+                        <hr />
+                        <h5>About the Experience</h5>
+                        <div id="adventure-content"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="">
+                        <div id="reservation-panel-sold-out">
+                            <h3>Sold Out!</h3>
+                            <hr />
+                            This activity is currently sold out. But there's a lot more to
+                            <a href="../../../" style="color: orange !important">explore.</a>
+                        </div>
+                        <div id="reservation-panel-available">
+                            <form id="myForm" action="" method="">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="name" required />
+                                <br />
+                                <label>Pick a Date</label>
+                                <input type="date" class="form-control" name="date" required />
+                                <hr />
+                                <div class=" d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="m-0">Person(s)</h6>
+                                        <p class="m-0" style="font-size: 16px; color: #999">
+                                        <div class="d-inline">₹</div>
+                                        <div class="d-inline" id="reservation-person-cost">0</div> per head
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input type="number" class="form-control" min="1" max="10" value="0"
+                                            name="person" required onkeyup="onPersonsChange(event)"
+                                            style="width: 100px" />
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="m-0">Total</h6>
+                                    </div>
+                                    <div>
+                                        <h5>
+                                            ₹
+                                            <div class="d-inline" id="reservation-cost">0</div>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <button class="reserve-button" type="submit">Reserve</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">© QTrip 2020</div>
+    </footer>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script type="module">
+        import {
+            getAdventureIdFromURL,
+            fetchAdventureDetails,
+            addAdventureDetailsToDOM,
+            addBootstrapPhotoGallery,
+            conditionalRenderingOfReservationPanel,
+            captureFormSubmit,
+            calculateReservationCostAndUpdateDOM,
+            showBannerIfAlreadyReserved,
+        } from "../../../modules/adventure_details_page.js";
+        (async function () {
+            let adventureId = await getAdventureIdFromURL(window.location.search);
+            let adventureDetails = await fetchAdventureDetails(adventureId);
+            addAdventureDetailsToDOM(adventureDetails);
+            addBootstrapPhotoGallery(adventureDetails.images);
+            conditionalRenderingOfReservationPanel(adventureDetails);
+            captureFormSubmit(adventureDetails);
+            showBannerIfAlreadyReserved(adventureDetails);
+            function onPersonsChange(event) {
+                calculateReservationCostAndUpdateDOM(
+                    adventureDetails,
+                    event.target.value
+                );
+            }
+            window.onPersonsChange = onPersonsChange;
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+__CRIO__/metadata.json merge=copy-merge
+frontend/__tests__/module/landing_page.test.js merge=copy-merge
+frontend/__tests__/module/adventures_page.test.js merge=copy-merge
+frontend/__tests__/module/adventure_details_page.test.js merge=copy-merge
+frontend/__tests__/module/reservation_page.test.js merge=copy-merge
+frontend/__tests__/pnpm-lock.yaml
+frontend/__tests__/package-lock.json
+frontend/__tests__/package.json
+backend/pnpm-lock.yaml
+backend/package-lock.json
+backend/package.json

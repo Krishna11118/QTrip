@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QTrip Adventures</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3">
+        <a class="navbar-brand" href="../../">QTrip</a>
+        <div id="city-name"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex justify-content-end w-100">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./reservations/">Reservations</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content section -->
+    <div class="container">
+        <div class="content">
+            <!-- Page heading and description -->
+            <h1>Explore all adventures</h1>
+            <p style="font-size: 24px">
+                Here's a list of places that you can explore in city
+            </p>
+            <div class="mb-5">
+                <!-- Filters section -->
+                <div class="filter-bar d-flex align-items-center">
+                    <div class="filter-bar-tile">
+                        <label for="duration">Filters:</label>
+                    </div>
+                    <!-- Duration filter (select one) -->
+                    <div class="filter-bar-tile d-flex align-items-center">
+                        <select class="form-control" name="duration" id="duration-select"
+                            onchange="selectDuration(event)">
+                            <option disabled selected value="">
+                                Filter by Duration (Hours)
+                            </option>
+                            <option value="0-2">0-2 Hours</option>
+                            <option value="2-6">2-6 Hours</option>
+                            <option value="6-12">6-12 Hours</option>
+                            <option value="12-99">12+ Hours</option>
+                        </select>
+                        <div class="ms-3" style="color: #0645ad; cursor: pointer" onclick="clearDuration(event)">
+                            Clear
+                        </div>
+                    </div>
+                    <!-- Category filter (select one or many) -->
+                    <div class="filter-bar-tile d-flex align-items-center">
+                        <select class="form-control" id="category-select" onchange="selectCategory(event)">
+                            <option disabled selected value="">Add Category</option>
+                            <option value="Cycling">Cycling Routes</option>
+                            <option value="Hillside">Hillside Getaways</option>
+                            <option value="Beaches">Serene Beaches</option>
+                            <option value="Party">Party Spots</option>
+                        </select>
+                        <div class="ms-3" style="color: #0645ad; cursor: pointer" onclick="clearCategory(event)">
+                            Clear
+                        </div>
+                    </div>
+                </div>
+                <!-- Section to display all selected categories  -->
+                <div class="mt-2" id="category-section">
+                    <div class="d-flex align-items-center" id="category-list"></div>
+                </div>
+            </div>
+            <!-- Display Adventures cards -->
+            <div class="row" id="data"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">© QTrip 2020</div>
+    </footer>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script type="module">
+        import {
+            getCityFromURL,
+            fetchAdventures,
+            addAdventureToDOM,
+            filterByDuration,
+            filterByCategory,
+            filterFunction,
+            saveFiltersToLocalStorage,
+            getFiltersFromLocalStorage,
+            generateFilterPillsAndUpdateDOM
+        } from "../../modules/adventures_page.js";
+
+        // Declaring global variable adventure
+        let adventures;
+
+        //Checks if filters are available in local storage and sets the value accordingly
+        // The structure of "filters" object is { duration : "6-10", category : [] }, which basically means duration is single-value filter and category is multi-value filter
+
+        let filters =
+            getFiltersFromLocalStorage() !== null
+                ? getFiltersFromLocalStorage()
+                : { duration: "", category: [] };
+
+
+        //entry point (executed when DOM is loaded)
+        (async function () {
+
+            //Fetches the City from URL query param (here : window.location.search is an in-built browser property that returns the query param from URL, example: http://localhost:8081/?city=bengaluru => window.location.search would return "?city=bengaluru")
+            let city = await getCityFromURL(window.location.search);
+
+            //Fetches the adventures for the particular city
+            adventures = await fetchAdventures(city);
+
+            //Applies filters on the adventures list
+            let filteredAdventures = filterFunction(adventures, filters);
+
+            //Updates the filtered adventures list to the DOM
+            addAdventureToDOM(filteredAdventures)
+
+            // Updates the DOM with filter pills if any
+            generateFilterPillsAndUpdateDOM(filters);
+        })();
+
+
+        //executed when onChange() is triggered on duration filter dropdown
+        function selectDuration(event) {
+            // TODO: MODULE_FILTERS
+            // 1. Change the DOM to show the selected duration filter. Use the provided input event
+            // 2. Invoke saveFiltersToLocalStorage here
+
+        }
+
+        //executed when clear button is clicked on duration filter dropdown
+        function clearDuration(event) {
+            // TODO: MODULE_FILTERS
+            // 1. Change the DOM to clear the Duration filter. Refer clearCategory() below
+            // 2. Invoke saveFiltersToLocalStorage here
+
+        }
+
+
+
+        //executed when onChange() is triggered on category filter dropdown
+        function selectCategory(event) {
+            document.getElementById("data").textContent = "";
+            document.getElementById("category-list").textContent = "";
+
+            let category = event.target.value;
+            document.getElementById("category-select").selectedIndex = 0;
+
+            filters["category"].push(category);
+            filters["category"] = filters["category"].filter(onlyUnique);
+
+
+            generateFilterPillsAndUpdateDOM(filters);
+            let filteredAdventures = filterFunction(adventures, filters);
+            addAdventureToDOM(filteredAdventures);
+
+            // TODO: MODULE_FILTERS
+            // 1. Invoke saveFiltersToLocalStorage here
+        }
+
+        //executed when clear button is clicked on category filter dropdown
+        function clearCategory(event) {
+            document.getElementById("data").textContent = "";
+            document.getElementById("category-list").textContent = "";
+
+            filters["category"] = [];
+            let filteredAdventures = filterFunction(adventures, filters);
+            addAdventureToDOM(filteredAdventures);
+
+            // TODO: MODULE_FILTERS
+            // 1. Invoke saveFiltersToLocalStorage here
+        }
+
+        //helper function
+        function onlyUnique(value, index, self) {
+            return self.indexOf(value) === index;
+        }
+
+        //registering module based functions in the DOM in order for them to work
+        window.selectDuration = selectDuration;
+        window.selectCategory = selectCategory;
+        window.clearDuration = clearDuration;
+        window.clearCategory = clearCategory;
+    </script>
+</body>
+
+</html>
