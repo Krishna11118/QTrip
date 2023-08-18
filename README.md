@@ -22,32 +22,38 @@ List of frameworks/libraries/languages that were used to build this project.
 
 <h2>Screenshots</h2>
 <br>
-<h3>Landing Page </h3>
+<h3> &#9732;
+Landing Page </h3>
 <br>
 <div align='center'>
+  
 <img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_1.png'/>
 </div>
 
-<h3>Adventure Page </h3>
+<h3> &#9732;
+ Adventure Page </h3>
 <br>
 <div align='center'>
 <img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_2.png'/>
 </div>
 
-<h3>Booking & Adventure Detailed Page </h3>
+<h3> &#9732;
+ Booking & Adventure Detailed Page </h3>
 <br>
 <div align='center'>
 <img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_5.png'/>
 </div>
 
-<h3>Reservation </h3>
+<h3>&#9732;
+ Reservation </h3>
 <br>
 <div align='center'>
 <img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_4.png'/>
 </div>
 
 
-<h2>Contact</h2>
+<h2>&#9742;
+ Contact</h2>
 <br>
 
 Krishna -  [@Whatsapp](https://wa.me/+917318378893) - krishnassss365@gmail.com - [@LinkedIn](https://www.linkedin.com/in/krishna365/)
