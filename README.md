@@ -24,22 +24,22 @@ List of frameworks/libraries/languages that were used to build this project.
 <br>
 <h3>Landing Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_1.png'/>
+<img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_1.png'/>
 </div>
 
 <h3>Adventure Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_2.png'/>
+<img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_2.png'/>
 </div>
 
 <h3>Booking & Adventure Detailed Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_4.png'/>
+<img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_5.png'/>
 </div>
 
 <h3>Reservation </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_5.png'/>
+<img src='https://github.com/Krishna11118/QTripDynamic/blob/main/examples/Qtrip_Dynamic_4.png'/>
 </div>
 
 
