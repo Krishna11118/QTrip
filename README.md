@@ -6,7 +6,7 @@
   Created 3 different web pages from Wireframe layout using HTML and CSS
 Utilized Bootstrap extensively for responsive design</p>
 
-![](https://github.com/Krishna11118/QTripStatic/blob/main/examples/QTripDynamic_Gif.gif)
+![](https://github.com/Krishna11118/QTripDynamic/blob/main/examples/QTrip_Dynamic_Gif.gif)
 
 
 👉 Live Demo: <a href='https://krishna-qtrip.netlify.app/'>Live Demo</a>
