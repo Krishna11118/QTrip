@@ -9,7 +9,7 @@ Utilized Bootstrap extensively for responsive design</p>
 ![](https://github.com/Krishna11118/QTripDynamic/blob/main/examples/QTrip_Dynamic_Gif.gif)
 
 
-👉 Live Demo: <a href='https://krishna-qtrip.netlify.app/'>Live Demo</a>
+👉 Live Demo: <a href='https://qtrip-dynamic-krishna.netlify.app/'>Live Demo</a>
 
 
 List of frameworks/libraries/languages that were used to build this project.
@@ -24,19 +24,23 @@ List of frameworks/libraries/languages that were used to build this project.
 <br>
 <h3>Landing Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Static_1.png'/>
+<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_1.png'/>
 </div>
 
 <h3>Adventure Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Static_2.png'/>
+<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_2.png'/>
 </div>
 
-<h3>Adventure Detailed Page </h3>
+<h3>Booking & Adventure Detailed Page </h3>
 <div align='center'>
-<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Static_3.png'/>
+<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_4.png'/>
 </div>
 
+<h3>Reservation </h3>
+<div align='center'>
+<img src='https://github.com/Krishna11118/QTripStatic/blob/main/examples/Qtrip_Dynamic_5.png'/>
+</div>
 
 
 <h2>Contact</h2>
