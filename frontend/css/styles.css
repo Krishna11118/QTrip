@@ -10,6 +10,8 @@ body {
 body {
   overflow-y: auto;
   min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 textarea:focus,
 input:focus {
@@ -192,7 +194,7 @@ footer {
   right: 0;
   z-index: 1;
   margin-top: 16px;
-  margin-right: 8px;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,4 +262,66 @@ input[type="number"] {
   border-radius: 4px;
   padding: 16px;
   margin-bottom: 30px;
+}
+
+/* .........................................ADV............................................ */
+.card-outsider {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card {
+  color: rgb(0, 0, 0);
+  position: relative;
+  height: 350px;
+
+  border: 1px solid rgb(212, 206, 206);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s all;
+  object-fit: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bannerParent {
+  position: relative;
+  height: 350px;
+  padding: 6px;
+}
+
+.activity-card img {
+  width: 350px;
+  height: 80%;
+  object-fit: cover;
+  transition: 0.2s all;
+}
+.activity-card img:hover {
+  filter: brightness(70%);
+  transform: scale(1.1);
+}
+
+.adventure-details-card {
+  height: 15vh;
+  display: flex;
+  border: 2px solid #e6e7e7;
+  justify-content: space-between;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+}
+
+.adventure-card-grid img:hover {
+  filter: brightness(70%);
 }

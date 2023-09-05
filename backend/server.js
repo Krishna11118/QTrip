@@ -34,6 +34,8 @@ Data is sourced from "cities" array in db.json file
 */
 app.get("/cities", (req, res) => {
   const data = db.get("cities").value();
+
+  // console.log("citiess-->",data)
   return res.json(data);
 });
 
@@ -53,6 +55,7 @@ Data is sourced from "adventures" array in db.json file
 */
 app.get("/adventures", (req, res) => {
   const data = db.get("adventures").value();
+
   let response = (data.find((item) => item.id == req.query.city) || [])
     .adventures;
   if (response) return res.json(response);
