@@ -28,8 +28,36 @@ footer {
   color: #999;
   position: absolute;
   bottom: 0;
-  /* width: 100%; */
-  /* height: 2.5rem;   */
+}
+#loader  {
+  width: 56px;
+  height: 26.9px;
+  margin-left: 50%;
+  background: radial-gradient(circle closest-side,#e38305 90%,#0000) 0%   50%,
+         radial-gradient(circle closest-side,#e38305 90%,#0000) 50%  50%,
+         radial-gradient(circle closest-side,#e38305 90%,#0000) 100% 50%;
+  background-size: calc(100%/3) 13.4px;
+  background-repeat: no-repeat;
+  animation: dots-7ar3yq 1s infinite linear;
+}
+
+@keyframes dots-7ar3yq {
+  20% {
+     background-position: 0%   0%, 50%  50%,100%  50%;
+  }
+
+  40% {
+     background-position: 0% 100%, 50%   0%,100%  50%;
+  }
+
+  60% {
+     background-position: 0%  50%, 50% 100%,100%   0%;
+  }
+
+  80% {
+     background-position: 0%  50%, 50%  50%,100% 100%;
+  }
+}
 }
 
 .banner {
@@ -40,15 +68,13 @@ footer {
 }
 
 .content {
-  padding: 100px 0px;
+  padding: 50px 0px;
   /* display: flex;
   flex-wrap: wrap; */
 }
 .tile {
   position: relative;
   height: 100%;
-  /* width: calc(25% - 20px); */
-  /* padding: 6px; */
   border-radius: 8px;
   cursor: pointer;
   -webkit-transition: 0.2s all;
@@ -194,7 +220,7 @@ footer {
   right: 0;
   z-index: 1;
   margin-top: 16px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,7 +343,6 @@ input[type="number"] {
   border-bottom-right-radius: 5px;
   padding: 10px;
 }
-
 
 @media only screen and (max-width: 768px) {
 }
