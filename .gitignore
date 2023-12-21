@@ -3,9 +3,6 @@
 # dependencies
 node_modules
 
-# testing
-coverage
-
 # misc
 .DS_Store
 .env.local
@@ -22,9 +19,7 @@ build/static/js/*.map
 
 build/*
 
-frontend/__tests__/junit.xml
-frontend/__tests__/node_modules
-frontend/__tests__/node_modules/
+
 backend/node_modules
 backend/node_modules/
 # Local Netlify folder
