@@ -59,7 +59,6 @@
     <div class="container">
       <div class="content text-white">
         <div class="row" id="data"></div>
-        
       </div>
     </div>
 
@@ -82,14 +81,9 @@
       import { init } from "./modules/landing_page.js";
 
       //entry point (executed when DOM is loaded)
-    //   (async function () {
-    //     init();
-    //   })();
-      document.addEventListener("DOMContentLoaded", function () {
-        (async function () {
-          init();
-        })();
-      });
+      (async function () {
+        init();
+      })();
     </script>
   </body>
 </html>

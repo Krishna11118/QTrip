@@ -4,7 +4,6 @@ async function init() {
   // Show loading message
   showLoadingMessage();
   // debug();
-  console.log("Show Loader 1")
 
   try {
     // Fetches list of all cities along with their images and description
@@ -13,7 +12,6 @@ async function init() {
     // Updates the DOM with the cities
     if (cities) {
       hideLoadingMessage(); // Hide loading message once cities are fetched
-      console.log("Hiding loader");
 
       cities.forEach((key) => {
         addCityToDOM(key.id, key.city, key.description, key.image);
@@ -28,7 +26,6 @@ async function init() {
 
 // Show loading message function
 function showLoadingMessage() {
-  console.log("Show Loader 2")
   let loader = document.createElement("div");
   loader.id = "loader";
   loader.innerHTML = "";
@@ -37,7 +34,6 @@ function showLoadingMessage() {
 
 // Hide loading message function
 function hideLoadingMessage() {
-  console.log("Hide Loader 3")
 
   let loader = document.getElementById("loader");
   if (loader) {
